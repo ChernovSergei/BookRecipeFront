@@ -3,10 +3,10 @@
 <html>
     <head>
         <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-        <title>Recipe</title>
+        <title>EditRecipe</title>
         <script src = "DataLocalServer.js"></script>
         <script src = "RecipeClass.js"></script>
-        <script src = "Recipe.js"></script>
+        <script src = "EditRecipe.js"></script>
     </head>
     <body>
         <p>
@@ -14,15 +14,17 @@
             <a href="Recipes.html">Recipes</a>
         </p>
         <p>
-            <button onClick = "deleteRecipe();">delete</button>
-            <button onClick = "editRecipe();">edit</button>
+            <button onClick = "update();">save</button>
         </p>
-        <h2 id="recipeName">
+        <h2 id="recipeNameHeader">
         </h2>
+        <h3>
+            <button id = "addStep" onClick = "addEmptyStep();">Add Step</button>
+        </h3>
         <h3>
             Steps:
         </h3>
-        <p id="steps">
+        <p id="stepsEdit">
         </p>
     </body>
 </html>

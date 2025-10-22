@@ -59,3 +59,25 @@ async function saveRecipe(newRecipe) {
         return null;
     }
 }
+
+async function updateRecipe(editedRecipe) {
+    try {
+        const response = await fetch("http://localhost:8080/api/update/recipe", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedRecipe)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
+
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error("Error saving recipe:", error);
+        return null;
+    }
+}
