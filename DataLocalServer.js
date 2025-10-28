@@ -14,6 +14,24 @@ async function fetchRecipesFromLocalhost() {
     }
 }
 
+//temp {
+async function getAllRecipesNames() {
+    try {
+        const response = await fetch("http://localhost:8080/api/recipeNames");
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.text();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
+}
+// }
+
 async function getRecipeJSON(id) {
     const recipeId = id;
 
